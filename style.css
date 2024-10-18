@@ -1,0 +1,300 @@
+/*.montserrat-<uniquifier> {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;}*/
+
+/*normalización*/
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+    list-style: none;
+    text-decoration: none;
+    color: white;
+
+}
+
+body{
+    background-color: #161616; /*To Do: borrar cuando el fondo este bien*/
+}
+
+header{
+    position: fixed; /* Esto hace que el header quede fijo en el top de la pagina*/
+    right: 0;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    display: flex; /*Transformar a elemento en linea*/
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 3%;
+    background-color: #161616ef;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.navlist{
+    display: flex; /*transformar en elemento en linea*/
+
+}
+
+.navlist a {
+    margin-left: 60px;/*Es para separar las palabras*/
+    font-size: 20px;
+    font-weight: 600;
+    border-bottom: 2px solid transparent; /*Subrayado transparente*/
+    transition: all .5s ease;/*Esto es para animar todas las caracteristicas del .navlist a */
+}
+
+.navlist a:hover{
+    border-bottom: 2px solid white; /*Subrayado Blanco que aparece cuando le pasamos encima el mouse*/
+}
+
+
+
+#menu-icon{
+    color: white;
+    font-size: 35px;
+    z-index: 101;
+    cursor: pointer;
+    display: none;
+}
+
+#menu-toggle{
+    display: none; /*no quiero que el checkbox sea visible*/
+}
+
+.menu-icon-action {
+    display: none; /*Para que no sea posible hacerle click*/
+}
+
+.hero{
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(245.59deg, #fe0557 0%, #0aabba 25%, #100f0d 75%);/*Fondo degradado*/
+    position: relative;/*Que sea relativo permite usar top, bottom, left y right*/
+    display: grid;/*Esto es para dividir el hero en columnas*/
+    grid-template-columns: 1fr 1fr;/*Las 2 columnas*/
+    align-items: center;/*Alinea verticalmente el hero*/
+    gap: 2rem;/*Pone espacio de 2rem entre las 2 columnas*/
+    
+}
+
+section{
+    padding: 0 8%;
+}
+
+.hero-text h5{
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 25px;
+}
+
+.hero-text h1{
+    font-family: "Montserrat", sans-serif;
+    font-size: 50px;
+    line-height: 1;
+    padding: 0 0 30px;
+}
+
+
+.hero-text h4 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}
+
+.hero-text p{
+    font-size: 80%;
+    margin-bottom: 40px;
+    line-height: 1.9;
+}
+
+.hero-img img {
+    width: 400px;       /* Ancho de la imagen */
+    height: 400px;      /* Alto de la imagen */
+    border-radius: 50%; /* Hace que los bordes sean redondos */
+    object-fit: cover;  /* Ajusta la imagen para que llene el contenedor sin deformarse */
+    overflow: hidden;   /* Esconde las partes que salen del borde */
+    margin: 10% 0 0 10%;
+    transition: all 5s linear;
+}
+
+.hero-img img:hover {
+    width: 450px;
+    height: 450px;
+    opacity: 0.6;
+}
+
+.hero-text a{
+    display: inline-block;
+    background-color: #4d4d4d;
+    border: 1px solid transparent;
+    padding: 15px 30px;
+    line-height: 1.4;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 25px;
+    text-transform: uppercase;
+    transition:all .5s ease;
+}
+
+
+.hero-text a:hover{
+    background-color: transparent;
+    border: 1px solid white;
+    transform: translateX(8px);
+}
+
+
+.hero-text a.videos{
+    background-color: transparent;
+    border: 1px solid white;
+    margin-left: 20px;
+}
+
+.hero-text a.videos i {
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.icons{
+    position:absolute;
+    top: 50vh;
+    padding: 0 3%;
+    transform: translateY(-50%);
+}
+
+.icons i {
+    display: block;
+    margin: 26px 0;
+    font-size: 25px;
+    transition: all .5s ease;
+}
+
+.icons i:hover{
+    color: #4d4d4d;
+    transform: translateY(-5px);
+}
+
+.scroll-down{
+    position: absolute;
+    bottom: 6%;
+    right: 3%;
+}
+
+.scroll-down i {
+    display: block;
+    padding: 12px;
+    font-size: 25px;
+    background-color: #21383d;
+    border-radius: 30px;
+    transition: all .5s ease;
+}
+
+.scroll-down i:hover{
+    transform: translateY(-5px);
+}
+
+/*Diseño responsive con media query*/
+
+@media (max-width:992px){
+    section{
+        padding: 0 3%;
+        transition: .2s;
+    }
+
+    .icons{
+        display: none;
+    }
+
+    .hero-text{
+        padding-top: 0;
+    }
+
+    .hero-img{
+        text-align: center;
+    }
+
+    .hero-img img{
+        width: 80%;
+        margin: 10% 0 0 10%;
+    }
+
+    .hero-text{
+        font-size: 70%;
+    }
+
+    .scroll-down{
+        display: none;
+    }
+
+ 
+}
+
+
+@media (max-width:768px) {
+
+    .menu-icon-action{
+        display: block;
+    }
+
+    #menu-icon{
+        display: block;
+    }
+
+    .hero-text{
+        text-align: center;
+        padding-top: 100px;
+    }
+
+    .hero-img img{
+        height: 200px;
+        width: 200px;
+        margin: 0;
+    }
+
+    .hero-img img:hover{
+        height: 230px;
+        width: 230px;
+    }
+
+    .hero{
+        height: 100%;
+        gap: 1rem;
+        grid-template-columns: 1fr;
+    }
+
+    .navlist{
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 200px;
+        height: 180px;
+        background-color: #161616ef;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 15px;
+        transition: all .5s ease-out;
+    }
+
+    .navlist a{
+        display: block;
+        margin: 7px 0;
+    }
+
+    #menu-toggle:checked + label.menu-icon-action + ul {
+        right: 0;
+
+    }
+}
